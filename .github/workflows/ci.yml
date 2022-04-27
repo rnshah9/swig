@@ -194,7 +194,7 @@ jobs:
             # Stricter compile flags for examples. Various headers and SWIG generated code prevents full use of -pedantic.
             cflags=$($GITHUB_WORKSPACE/Tools/testflags.py --language $SWIGLANG --cflags --std=$CSTD --compiler=$CC)
             cxxflags=$($GITHUB_WORKSPACE/Tools/testflags.py --language $SWIGLANG --cxxflags --std=$CPPSTD --compiler=$CC)
-            make -C Examples/test-suite/ruby cli_std_set.cpptest CFLAGS="$cflags" CXXFLAGS="$cxxflags -fsanitize=undefined"
+            make -C Examples/test-suite/ruby li_std_set.cpptest CFLAGS="$cflags" CXXFLAGS="$cxxflags -fsanitize=undefined"
           fi
 
     - name: Install
