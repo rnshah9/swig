@@ -2,4 +2,4 @@ project: swig
 target: swig
 
 cmds:
-  - cmd: /repo/swig -tcl @@
+  - cmd: /install/bin/swig -tcl @@
