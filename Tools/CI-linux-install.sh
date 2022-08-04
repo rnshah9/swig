@@ -12,8 +12,7 @@ else
 fi
 
 $RETRY sudo apt-get -qq install libboost-dev libpcre3-dev
-# testflags.py needs python
-$RETRY sudo apt-get install -qq python
+# Note: testflags.py needs python, but python is pre-installed
 
 WITHLANG=$SWIGLANG
 
@@ -55,7 +54,7 @@ case "$SWIGLANG" in
 				fi
 				;;
 			"jsc")
-				$RETRY sudo apt-get install -qq libjavascriptcoregtk-4.0-dev
+				$RETRY sudo apt-get install -qq libjavascriptcoregtk-${VER}-dev
 				;;
 			"v8")
 				$RETRY sudo apt-get install -qq libv8-dev
@@ -63,7 +62,7 @@ case "$SWIGLANG" in
 		esac
 		;;
 	"guile")
-		$RETRY sudo apt-get -qq install guile-2.0-dev
+		$RETRY sudo apt-get -qq install guile-${VER:-2.0}-dev
 		;;
 	"lua")
 		if [[ -z "$VER" ]]; then
